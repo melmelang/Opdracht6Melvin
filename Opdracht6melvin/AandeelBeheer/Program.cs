@@ -24,7 +24,7 @@ namespace AandeelBeheer
         {
             AaandeelBeheerData.Rss rssdata = new AaandeelBeheerData.Rss();
             rssdata.ConnectionString = @"Data Source=(LocalDB)\v11.0;  
-			 AttachDbFilename=C:\Users\angeli melvin\source\repos\Opdracht6melvin\AandeelBeheer\AandelenBeheer.mdf; 
+			 AttachDbFilename=|DataDirectory|\AandelenBeheer.mdf; 
 			 Integrated Security=True;   Connect Timeout=30";
             rssdata.Bewaar("Titel", "Ik", "Geen", "http://", DateTime.Now);
         }

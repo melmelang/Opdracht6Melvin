@@ -13,3 +13,17 @@ C:\Users\angeli melvin\source\repos\Opdracht6melvin\AandeelBeheer\bin\Debug\Syst
 C:\Users\angeli melvin\source\repos\Opdracht6melvin\AandeelBeheer\bin\Debug\AaandeelBeheerData.pdb
 C:\Users\angeli melvin\source\repos\Opdracht6melvin\AandeelBeheer\bin\Debug\System.Data.SqlClient.xml
 C:\Users\angeli melvin\source\repos\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.csproj.CopyComplete
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\AandeelBeheer.exe.config
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\AandeelBeheer.exe
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\AandeelBeheer.pdb
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\AaandeelBeheerData.dll
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\System.Data.SqlClient.dll
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\AaandeelBeheerData.pdb
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\bin\Debug\System.Data.SqlClient.xml
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.csproj.AssemblyReference.cache
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.csproj.SuggestedBindingRedirects.cache
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.Properties.Resources.resources
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.csproj.GenerateResource.cache
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.csproj.CoreCompileInputs.cache
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.exe
+C:\Users\angeli melvin\Documents\GitHub\Opdracht6Melvin\Opdracht6melvin\AandeelBeheer\obj\Debug\AandeelBeheer.pdb
