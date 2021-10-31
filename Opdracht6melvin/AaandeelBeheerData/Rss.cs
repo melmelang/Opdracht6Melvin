@@ -10,15 +10,10 @@ namespace AaandeelBeheerData
 {
     public class Rss
     {
-        private string connectionString;
+        private string connectionString = @"Data Source=(LocalDB)\v11.0;  
+			 AttachDbFilename=|DataDirectory|\AandelenBeheer.mdf; 
+			 Integrated Security=True;   Connect Timeout=30";
 
-        public string ConnectionString
-        {
-
-            get { return connectionString; }
-            set { connectionString = value; }
-
-        }
 
         private SqlConnection GetDbConnectie()
         {
