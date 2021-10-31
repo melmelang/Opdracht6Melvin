@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2016CTP3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CountryRegion">
+    <Key>
+      <PropertyRef Name="CountryRegionCode" />
+    </Key>
+    <Property Name="CountryRegionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CountryRegionCurrency" Relationship="Self.FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" FromRole="CountryRegion" ToRole="CountryRegionCurrency" />
+  </EntityType>
+  <EntityType Name="CountryRegionCurrency">
+    <Key>
+      <PropertyRef Name="CountryRegionCode" />
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CountryRegionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CountryRegion" Relationship="Self.FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" FromRole="CountryRegionCurrency" ToRole="CountryRegion" />
+    <NavigationProperty Name="Currency" Relationship="Self.FK_CountryRegionCurrency_Currency_CurrencyCode" FromRole="CountryRegionCurrency" ToRole="Currency" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CountryRegionCurrency" Relationship="Self.FK_CountryRegionCurrency_Currency_CurrencyCode" FromRole="Currency" ToRole="CountryRegionCurrency" />
+  </EntityType>
+  <Association Name="FK_CountryRegionCurrency_CountryRegion_CountryRegionCode">
+    <End Role="CountryRegion" Type="Self.CountryRegion" Multiplicity="1" />
+    <End Role="CountryRegionCurrency" Type="Self.CountryRegionCurrency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryRegion">
+        <PropertyRef Name="CountryRegionCode" />
+      </Principal>
+      <Dependent Role="CountryRegionCurrency">
+        <PropertyRef Name="CountryRegionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryRegionCurrency_Currency_CurrencyCode">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+    <End Role="CountryRegionCurrency" Type="Self.CountryRegionCurrency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyCode" />
+      </Principal>
+      <Dependent Role="CountryRegionCurrency">
+        <PropertyRef Name="CurrencyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AdventureWorks2016CTP3Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CountryRegion" EntityType="Self.CountryRegion" />
+    <EntitySet Name="CountryRegionCurrency" EntityType="Self.CountryRegionCurrency" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" />
+    <AssociationSet Name="FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" Association="Self.FK_CountryRegionCurrency_CountryRegion_CountryRegionCode">
+      <End Role="CountryRegion" EntitySet="CountryRegion" />
+      <End Role="CountryRegionCurrency" EntitySet="CountryRegionCurrency" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryRegionCurrency_Currency_CurrencyCode" Association="Self.FK_CountryRegionCurrency_Currency_CurrencyCode">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="CountryRegionCurrency" EntitySet="CountryRegionCurrency" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,6 @@
+C:\Users\angeli melvin\source\repos\Opdracht6melvin\AaandeelBeheerData\bin\Debug\AaandeelBeheerData.dll
+C:\Users\angeli melvin\source\repos\Opdracht6melvin\AaandeelBeheerData\bin\Debug\AaandeelBeheerData.pdb
+C:\Users\angeli melvin\source\repos\Opdracht6melvin\AaandeelBeheerData\obj\Debug\AaandeelBeheerData.csproj.AssemblyReference.cache
+C:\Users\angeli melvin\source\repos\Opdracht6melvin\AaandeelBeheerData\obj\Debug\AaandeelBeheerData.csproj.CoreCompileInputs.cache
+C:\Users\angeli melvin\source\repos\Opdracht6melvin\AaandeelBeheerData\obj\Debug\AaandeelBeheerData.dll
+C:\Users\angeli melvin\source\repos\Opdracht6melvin\AaandeelBeheerData\obj\Debug\AaandeelBeheerData.pdb

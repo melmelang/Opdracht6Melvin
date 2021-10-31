@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2016CTP3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CountryRegion">
+    <Key>
+      <PropertyRef Name="CountryRegionCode" />
+    </Key>
+    <Property Name="CountryRegionCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountryRegionCurrency">
+    <Key>
+      <PropertyRef Name="CountryRegionCode" />
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CountryRegionCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CurrencyCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CountryRegionCurrency_CountryRegion_CountryRegionCode">
+    <End Role="CountryRegion" Type="Self.CountryRegion" Multiplicity="1" />
+    <End Role="CountryRegionCurrency" Type="Self.CountryRegionCurrency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryRegion">
+        <PropertyRef Name="CountryRegionCode" />
+      </Principal>
+      <Dependent Role="CountryRegionCurrency">
+        <PropertyRef Name="CountryRegionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryRegionCurrency_Currency_CurrencyCode">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+    <End Role="CountryRegionCurrency" Type="Self.CountryRegionCurrency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyCode" />
+      </Principal>
+      <Dependent Role="CountryRegionCurrency">
+        <PropertyRef Name="CurrencyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AdventureWorks2016CTP3ModelStoreContainer">
+    <EntitySet Name="CountryRegion" EntityType="Self.CountryRegion" Schema="Person" store:Type="Tables" />
+    <EntitySet Name="CountryRegionCurrency" EntityType="Self.CountryRegionCurrency" Schema="Sales" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="Sales" store:Type="Tables" />
+    <AssociationSet Name="FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" Association="Self.FK_CountryRegionCurrency_CountryRegion_CountryRegionCode">
+      <End Role="CountryRegion" EntitySet="CountryRegion" />
+      <End Role="CountryRegionCurrency" EntitySet="CountryRegionCurrency" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryRegionCurrency_Currency_CurrencyCode" Association="Self.FK_CountryRegionCurrency_Currency_CurrencyCode">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="CountryRegionCurrency" EntitySet="CountryRegionCurrency" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

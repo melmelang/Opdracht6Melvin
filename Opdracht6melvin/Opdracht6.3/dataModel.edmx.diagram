@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc485d0458554444ba33ef4e5c0854a8" Name="Diagram1">
+        <EntityTypeShape EntityType="AdventureWorks2016CTP3Model.CountryRegion" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2016CTP3Model.CountryRegionCurrency" Width="2" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2016CTP3Model.Currency" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="AdventureWorks2016CTP3Model.FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2016CTP3Model.FK_CountryRegionCurrency_Currency_CurrencyCode" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
