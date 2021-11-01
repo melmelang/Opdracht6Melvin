@@ -44,7 +44,7 @@ namespace Opdracht6._3
                                                        crc => crc.CountryRegionCode,
                                                        cr => cr.CountryRegionCode,
                                                        (crc, cr) => new { Crc = crc, CrName = cr.Name, CrCRC = cr.CountryRegionCode })
-                                                 .Join(_db.Currency,
+                                                       .Join(_db.Currency,
                                                        crc => crc.Crc.CurrencyCode,
                                                        c => c.CurrencyCode,
                                                        (crc, c) => new { CCrc = crc, CName = c.Name });
