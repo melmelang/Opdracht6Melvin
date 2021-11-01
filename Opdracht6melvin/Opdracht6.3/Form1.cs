@@ -40,7 +40,7 @@ namespace Opdracht6._3
 
             DataGridView dataSender = (DataGridView)sender;
             string cre = (string)dataSender.CurrentCell.Value;
-            var test3 = _db.CountryRegionCurrency.Join(_db.CountryRegion,
+            var getCurrency = _db.CountryRegionCurrency.Join(_db.CountryRegion,
                                                        crc => crc.CountryRegionCode,
                                                        cr => cr.CountryRegionCode,
                                                        (crc, cr) => new { Crc = crc, CrName = cr.Name, CrCRC = cr.CountryRegionCode })
@@ -49,7 +49,7 @@ namespace Opdracht6._3
                                                        c => c.CurrencyCode,
                                                        (crc, c) => new { CCrc = crc, CName = c.Name });
 
-            foreach (var c in test3)
+            foreach (var c in getCurrency)
             {
                 if (c.CCrc.CrName.Contains(cre) || c.CCrc.CrCRC.Contains(cre))
                 {
