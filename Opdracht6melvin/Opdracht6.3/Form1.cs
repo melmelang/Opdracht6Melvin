@@ -39,7 +39,7 @@ namespace Opdracht6._3
             CurrencyListBox.Items.Clear();
 
             DataGridView dataSender = (DataGridView)sender;
-            string cre = (string)dataSender.CurrentCell.Value;
+            string nameOfClickedBox = (string)dataSender.CurrentCell.Value;
             var getCurrency = _db.CountryRegionCurrency.Join(_db.CountryRegion,
                                                        crc => crc.CountryRegionCode,
                                                        cr => cr.CountryRegionCode,
@@ -51,7 +51,7 @@ namespace Opdracht6._3
 
             foreach (var c in getCurrency)
             {
-                if (c.CCrc.CrName.Contains(cre) || c.CCrc.CrCRC.Contains(cre))
+                if (c.CCrc.CrName.Contains(nameOfClickedBox) || c.CCrc.CrCRC.Contains(nameOfClickedBox))
                 {
                     CurrencyListBox.Items.Add(c.CName);
                 }
