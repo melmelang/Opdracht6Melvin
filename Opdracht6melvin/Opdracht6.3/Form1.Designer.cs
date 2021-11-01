@@ -36,8 +36,8 @@
             this.countryRegionDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Currency = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CurrencyListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.adventureWorks2016CTP3DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryRegionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryRegionDataGridView)).BeginInit();
@@ -97,33 +97,34 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // Currency
-            // 
-            this.Currency.Enabled = false;
-            this.Currency.Location = new System.Drawing.Point(572, 189);
-            this.Currency.Name = "Currency";
-            this.Currency.Size = new System.Drawing.Size(100, 22);
-            this.Currency.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(569, 161);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(106, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Currency:";
+            this.label1.Text = "CurrencyListBox:";
+            // 
+            // CurrencyListBox
+            // 
+            this.CurrencyListBox.FormattingEnabled = true;
+            this.CurrencyListBox.ItemHeight = 16;
+            this.CurrencyListBox.Location = new System.Drawing.Point(572, 183);
+            this.CurrencyListBox.Name = "CurrencyListBox";
+            this.CurrencyListBox.Size = new System.Drawing.Size(191, 180);
+            this.CurrencyListBox.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CurrencyListBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Currency);
             this.Controls.Add(this.countryRegionDataGridView);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Country Table";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adventureWorks2016CTP3DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryRegionBindingSource)).EndInit();
@@ -142,8 +143,8 @@
         private System.Windows.Forms.DataGridView countryRegionDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.TextBox Currency;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox CurrencyListBox;
     }
 }
 

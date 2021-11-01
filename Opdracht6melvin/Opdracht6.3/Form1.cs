@@ -12,7 +12,7 @@ namespace Opdracht6._3
 {
     public partial class Form1 : Form
     {
-        AdventureWorks2016CTP3Entities1 _db = new AdventureWorks2016CTP3Entities1();
+        AdventureWorks2016CTP3Entities3 _db = new AdventureWorks2016CTP3Entities3();
 
         public Form1()
         {
@@ -36,25 +36,30 @@ namespace Opdracht6._3
 
         private void countryRegionDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            CurrencyListBox.Items.Clear();
 
             DataGridView dataSender = (DataGridView)sender;
             string cre = (string)dataSender.CurrentCell.Value;
             var test3 = _db.CountryRegionCurrency.Join(_db.CountryRegion,
                                                        crc => crc.CountryRegionCode,
                                                        cr => cr.CountryRegionCode,
-                                                       (crc, cr) => new {Crc = crc, CrName = cr.Name, CrCRC = cr.CountryRegionCode})
+                                                       (crc, cr) => new { Crc = crc, CrName = cr.Name, CrCRC = cr.CountryRegionCode })
                                                  .Join(_db.Currency,
                                                        crc => crc.Crc.CurrencyCode,
                                                        c => c.CurrencyCode,
-                                                       (crc, c) => new {CCrc = crc, CName = c.Name})
-                                                 .Where(cr => cr.CCrc.CrCRC == cre || cr.CCrc.CrName == cre)
-                                                 .Select(y => y.CName).ToList();
+                                                       (crc, c) => new { CCrc = crc, CName = c.Name });
 
-            MessageBox.Show(test3.ToString());
-
-            foreach (string c in test3)
+            foreach (var c in test3)
             {
-                MessageBox.Show("" + c);
+                if (c.CCrc.CrName.Contains(cre) || c.CCrc.CrCRC.Contains(cre))
+                {
+                    CurrencyListBox.Items.Add(c.CName);
+                }
+            }
+
+            if (CurrencyListBox.Items.Count == 0)
+            {
+                CurrencyListBox.Items.Add("none");
             }
 
         }

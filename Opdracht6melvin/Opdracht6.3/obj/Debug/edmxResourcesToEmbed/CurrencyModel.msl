@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdventureWorks2016CTP3ModelStoreContainer" CdmEntityContainer="AdventureWorks2016CTP3Entities3">
+    <EntitySetMapping Name="CountryRegion">
+      <EntityTypeMapping TypeName="AdventureWorks2016CTP3Model.CountryRegion">
+        <MappingFragment StoreEntitySet="CountryRegion">
+          <ScalarProperty Name="CountryRegionCode" ColumnName="CountryRegionCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountryRegionCurrency">
+      <EntityTypeMapping TypeName="AdventureWorks2016CTP3Model.CountryRegionCurrency">
+        <MappingFragment StoreEntitySet="CountryRegionCurrency">
+          <ScalarProperty Name="CountryRegionCode" ColumnName="CountryRegionCode" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currency">
+      <EntityTypeMapping TypeName="AdventureWorks2016CTP3Model.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

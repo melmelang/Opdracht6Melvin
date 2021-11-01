@@ -68,8 +68,8 @@ namespace Opdracht6._3 {
                 if ((ds.Tables["CountryRegionCurrency"] != null)) {
                     base.Tables.Add(new CountryRegionCurrencyDataTable(ds.Tables["CountryRegionCurrency"]));
                 }
-                if ((ds.Tables["Currency"] != null)) {
-                    base.Tables.Add(new CurrencyDataTable(ds.Tables["Currency"]));
+                if ((ds.Tables["CurrencyListBox"] != null)) {
+                    base.Tables.Add(new CurrencyDataTable(ds.Tables["CurrencyListBox"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -192,8 +192,8 @@ namespace Opdracht6._3 {
                 if ((ds.Tables["CountryRegionCurrency"] != null)) {
                     base.Tables.Add(new CountryRegionCurrencyDataTable(ds.Tables["CountryRegionCurrency"]));
                 }
-                if ((ds.Tables["Currency"] != null)) {
-                    base.Tables.Add(new CurrencyDataTable(ds.Tables["Currency"]));
+                if ((ds.Tables["CurrencyListBox"] != null)) {
+                    base.Tables.Add(new CurrencyDataTable(ds.Tables["CurrencyListBox"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -240,7 +240,7 @@ namespace Opdracht6._3 {
                     this.tableCountryRegionCurrency.InitVars();
                 }
             }
-            this.tableCurrency = ((CurrencyDataTable)(base.Tables["Currency"]));
+            this.tableCurrency = ((CurrencyDataTable)(base.Tables["CurrencyListBox"]));
             if ((initTable == true)) {
                 if ((this.tableCurrency != null)) {
                     this.tableCurrency.InitVars();
@@ -959,7 +959,7 @@ namespace Opdracht6._3 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CurrencyDataTable() {
-                this.TableName = "Currency";
+                this.TableName = "CurrencyListBox";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2348,14 +2348,14 @@ SELECT CountryRegionCode, CurrencyCode, ModifiedDate FROM Sales.CountryRegionCur
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Currency";
+            tableMapping.DataSetTable = "CurrencyListBox";
             tableMapping.ColumnMappings.Add("CurrencyCode", "CurrencyCode");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Sales].[Currency] WHERE (([CurrencyCode] = @Original_CurrencyCode) A" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Sales].[CurrencyListBox] WHERE (([CurrencyCode] = @Original_CurrencyCode) A" +
                 "ND ([Name] = @Original_Name) AND ([ModifiedDate] = @Original_ModifiedDate))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CurrencyCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CurrencyCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2363,17 +2363,17 @@ SELECT CountryRegionCode, CurrencyCode, ModifiedDate FROM Sales.CountryRegionCur
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Sales].[Currency] ([CurrencyCode], [Name], [ModifiedDate]) VALUES (@" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Sales].[CurrencyListBox] ([CurrencyCode], [Name], [ModifiedDate]) VALUES (@" +
                 "CurrencyCode, @Name, @ModifiedDate);\r\nSELECT CurrencyCode, Name, ModifiedDate FR" +
-                "OM Sales.Currency WHERE (CurrencyCode = @CurrencyCode)";
+                "OM Sales.CurrencyListBox WHERE (CurrencyCode = @CurrencyCode)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CurrencyCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CurrencyCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModifiedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Sales].[Currency] SET [CurrencyCode] = @CurrencyCode, [Name] = @Name, [ModifiedDate] = @ModifiedDate WHERE (([CurrencyCode] = @Original_CurrencyCode) AND ([Name] = @Original_Name) AND ([ModifiedDate] = @Original_ModifiedDate));
-SELECT CurrencyCode, Name, ModifiedDate FROM Sales.Currency WHERE (CurrencyCode = @CurrencyCode)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Sales].[CurrencyListBox] SET [CurrencyCode] = @CurrencyCode, [Name] = @Name, [ModifiedDate] = @ModifiedDate WHERE (([CurrencyCode] = @Original_CurrencyCode) AND ([Name] = @Original_Name) AND ([ModifiedDate] = @Original_ModifiedDate));
+SELECT CurrencyCode, Name, ModifiedDate FROM Sales.CurrencyListBox WHERE (CurrencyCode = @CurrencyCode)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CurrencyCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CurrencyCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2396,7 +2396,7 @@ SELECT CurrencyCode, Name, ModifiedDate FROM Sales.Currency WHERE (CurrencyCode 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CurrencyCode, Name, ModifiedDate FROM Sales.Currency";
+            this._commandCollection[0].CommandText = "SELECT CurrencyCode, Name, ModifiedDate FROM Sales.CurrencyListBox";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2435,7 +2435,7 @@ SELECT CurrencyCode, Name, ModifiedDate FROM Sales.Currency WHERE (CurrencyCode 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(AdventureWorks2016CTP3DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Currency");
+            return this.Adapter.Update(dataSet, "CurrencyListBox");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

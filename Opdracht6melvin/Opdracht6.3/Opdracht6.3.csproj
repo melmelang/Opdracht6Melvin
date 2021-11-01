@@ -61,28 +61,28 @@
       <DependentUpon>AdventureWorks2016CTP3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CountryRegion.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
+      <DependentUpon>CurrencyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CountryRegionCurrency.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
+      <DependentUpon>CurrencyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Currency.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
+      <DependentUpon>CurrencyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="dataModel.Context.cs">
+    <Compile Include="CurrencyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dataModel.Context.tt</DependentUpon>
+      <DependentUpon>CurrencyModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="dataModel.cs">
+    <Compile Include="CurrencyModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dataModel.tt</DependentUpon>
+      <DependentUpon>CurrencyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="dataModel.Designer.cs">
+    <Compile Include="CurrencyModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dataModel.edmx</DependentUpon>
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -115,12 +115,12 @@
     <None Include="AdventureWorks2016CTP3DataSet.xss">
       <DependentUpon>AdventureWorks2016CTP3DataSet.xsd</DependentUpon>
     </None>
-    <EntityDeploy Include="dataModel.edmx">
+    <EntityDeploy Include="CurrencyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CurrencyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="dataModel.edmx.diagram">
-      <DependentUpon>dataModel.edmx</DependentUpon>
+    <None Include="CurrencyModel.edmx.diagram">
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -140,15 +140,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dataModel.Context.tt">
+    <Content Include="CurrencyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dataModel.edmx</DependentUpon>
-      <LastGenOutput>dataModel.Context.cs</LastGenOutput>
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
+      <LastGenOutput>CurrencyModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="dataModel.tt">
+    <Content Include="CurrencyModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dataModel.edmx</DependentUpon>
-      <LastGenOutput>dataModel.cs</LastGenOutput>
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
+      <LastGenOutput>CurrencyModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
